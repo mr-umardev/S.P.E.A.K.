@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>S.P.E.A.K.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa:700" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    <link rel="stylesheet" href="index.css">
+    <script>
+        async function runScript(script) {
+            const response = await fetch(`http://localhost:5000/run-${script}`, { method: "POST" });
+            const data = await response.json();
+            alert(data.message || data.error);
+        }
+    </script>
+</head>
+<body>
+    <div id="loading">
+        <div id="spinner"></div>
+    </div>
+
+    <div id="header" class="animated slideInDown">
+        <div id="title">S.P.E.A.K.</div><br>
+        <div id="links">
+            <a href="#skills">Home</a>
+            <a href="#work" style="margin:0px 60px;">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+
+    <center>
+        <div id="middle">
+            <div id="tagline" class="animated zoomIn">
+                <p style="margin-left: 140px;font-size: 35px;">Smart Playback & Enhanced Audio Knowledge<br></p>
+                <button class="btn_one" onclick="runScript('main')">Run OratorX</button>
+                <button class="btn_two" onclick="runScript('app')">Run WaveX</button>
+            </div>
+        </div>
+    </center>
+
+    <div id="portfolio">
+        <div id="skills">
+            <h1>skills needed.</h1>   
+            <p>
+                For this project, I needed proficiency in Python programming, particularly in GUI development using Tkinter, audio handling with Pygame, and text-to-speech conversion using pyttsx3.  
+                <br><br>
+                Experience with speech recognition, file handling, and socket programming was essential for enabling voice commands and managing music files.  
+                <br><br>
+                Additionally, strong debugging and problem-solving skills were crucial for ensuring smooth functionality and user interaction.
+            </p>            
+        </div> 
+
+        <div id="work">
+            <h1>works.</h1>
+
+            <div class="project">
+                <h2>O.R.B.I.T</h2>
+                <p>J.A.R.V.I.S & F.R.I.D.A.Y – two voice assistants, one app.</p>
+                <a href="https://github.com/mr-umardev/J.A.R.V.I.S" target="blank">
+                    <button class="btn_one">visit project</button>
+                </a>
+            </div>
+
+            <div class="project">
+                <h2>Feelometric</h2>
+                <p>Analyze and flag social media comments by severity.</p>
+                <a href="https://github.com/mr-umardev/Feelometric" target="blank">
+                    <button class="btn_one">visit project</button>
+                </a>
+                <a href="https://github.com/mr-umardev/Feelometric" target="blank">
+                    <button class="btn_two">code</button>
+                </a>                
+            </div>
+        </div>
+
+        <div id="contact">
+            <h1>contact.</h1> 
+            <form>
+                <input type="text" placeholder="name" required>
+                <input type="email" placeholder="email" required><br>
+                <textarea placeholder="your message" required rows="5"></textarea><br>
+                <button class="btn_one">send</button>
+            </form> 
+            <div id="details">
+                <a class="btn_social"><i class="fas fa-phone"></i></a>
+                <a class="btn_social"><i class="fas fa-at"></i></a>
+                <a class="btn_social"><i class="fab fa-twitter"></i></a>
+                <a class="btn_social"><i class="fab fa-dribbble"></i></a>
+            </div>   
+        </div>
+    </div>
+
+    <div id="footer">
+        Made by Mr-UmarDev | © 2025 All Rights Reserved.<br><br> <a href="https://imfunniee.github.io">S.P.E.A.K.</a>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
